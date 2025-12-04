@@ -284,25 +284,22 @@ export const ClientPanel: React.FC<ClientPanelProps> = ({ onBack, initialProfess
             </div>
           )}
 
-          {/* STEP 5: Success */}
-          {step === 'success' && (
-            <div className="text-center py-10 animate-fade-in h-full flex flex-col items-center justify-center">
-              <div className="w-20 h-20 rounded-full flex items-center justify-center mb-6 bg-green-100">
-                 <Check className="w-10 h-10 text-green-600" />
-              </div>
-              <h2 className="text-2xl font-bold mb-2" style={{ color: config.colors.text }}>Agendamento Enviado!</h2>
-              <p className="opacity-70 mb-8 max-w-xs mx-auto" style={{ color: config.colors.text }}>
-                Você será redirecionado para o WhatsApp para finalizar a confirmação.
-              </p>
-              <button 
-                onClick={reset}
-                className="underline text-sm font-medium hover:opacity-80 transition-opacity"
-                style={{ color: config.colors.primary }}
-              >
-                Voltar ao início
-              </button>
-            </div>
-          )}
+           {/* STEP 5: Success */}
+           {step === 'success' && (
+             <div className="flex flex-col items-center justify-center h-full text-center space-y-6 animate-fade-in">
+               <div className="w-20 h-20 rounded-full bg-green-100 text-green-600 flex items-center justify-center">
+                 <Check size={40} />
+               </div>
+               <h2 className="text-2xl font-bold" style={{ color: config.colors.text }}>Agendamento Enviado!</h2>
+               <p className="opacity-70 max-w-xs" style={{ color: config.colors.text }}>
+                 Sua solicitação foi enviada para o WhatsApp do salão. Aguarde a confirmação.
+               </p>
+               <button onClick={reset} className="px-8 py-3 rounded-lg font-bold border" style={{ borderColor: 'rgba(0,0,0,0.1)', color: config.colors.text }}>
+                 Voltar ao Início
+               </button>
+             </div>
+           )}
+
         </div>
       </div>
     </div>
